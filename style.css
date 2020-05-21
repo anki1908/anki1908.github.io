@@ -1,116 +1,267 @@
-/*basic reset*/
-* {margin: 0; padding: 0;}
-/*adding a black bg to the body to make things clearer*/
-body {background: black;}
-canvas {
-    position: absolute;
-
-}
-@font-face {
-    font-family: "GreycliffC-Heavy";
-    src: url("./fonts/GreycliffCF-Heavy.otf");
-}
-
-@font-face {
-    font-family: "GreycliffC-Medium";
-    src: url("./fonts/GreycliffCF-Bold.otf");
-}
-.wrapper {
+body {
+    width: 100%;
     height: 100%;
-    width: 100%;
-    position: fixed;
+    margin: 0;
+    padding: 0;
+    background-color: black;
 }
 
-.title, .links {
-    transition: all 0.3s ease-in-out;
-    text-align: center;
-
-    font-family: GreycliffC-Heavy, serif;
-    font-size: 90px;
-
+.top {
+    font-family: "Bebas Neue", serif;
+    margin: 20px;
+    display: flex;
+    font-size: 25px;
+    color: #F1F1F1;
 }
 
-.title {
-    font-size: 110px;
-    margin-top: 34vh;
-    color: white;
-    text-align: center;
-    position: relative;
+.top .nav {
+    margin-left: auto;
+    
 }
 
-.links {
-    width: 100%;
-
-    font-family: Medium, serif;
-    font-size: 30px;
-
-    margin-top: 16px;
-    display: inline-block;
-    text-align: center;
+.nav-items a:hover {
+    padding: 10px;
+    background-color: #e98074;
+    color: #fff;
 }
 
-.tg, .github {
-    display: inline-block;
-}
-
-a {
-    font-family: GreycliffC-Medium, serif;
+.nav-items a {
+    padding: 10px;
+    color: #8e8d8a;
+    margin-right: 5px;
     text-decoration: none;
-
-    color: white;
-    position: relative;
 }
 
-a::before {
-    content: '';
+.name {
+    padding-top: 20%;
+    /* height: 400px; */
+    padding-bottom: 20%;
+    font-size: 100px;
+    text-align: center;
+    justify-content: center;
+    color: #e98074;
+    align-items: center;
+}
+.name p {
+    margin: 0;
+    padding: 0;
+    font-family: "Lobster Two", serif;
+}
 
-    position: absolute;
-    left: 50%;
-    bottom: -10%;;
+.name .intro, .name .info  {
+    color: #8e8d8a;
+    font-size: 35px;
+    font-family: 'Julius Sans One', serif;
+}
+
+#about {
+    justify-content: center;
+    padding-top: 20px;
+    align-items: center;
+    font-size: 40px;
+    height: 700px;
+    text-align: center;
     width: 100%;
-    height: 2px;
-
-    background-color: #0088cc;
-    transform-origin: center;
-    transform: translate(-50%, 0) scaleX(0);
-    transition: transform 0.3s ease-in-out;
+    font-family: "Bebas Neue", serif;
+    background-color: #F1F1F1;
 }
 
-a.github::before {
-    background-color: #cc242e;
+#about .desc {
+    padding-bottom: 50px;
+    font-size: 30px;
+    font-family: "Montserrat", sans-serif;
 }
 
-a:hover {
-    cursor: pointer;
-
+#about .skills {
+    padding-top: 30px;
+    font-size: 30px;
+    justify-content: center;
+    text-align: center;
+    display: flex;
 }
 
-a:hover::before {
-    transform: translate(-50%, 0) scaleX(1);
+.skills .card {
+    box-shadow: 0 1px 2px rgba(0,0,0,0.15);
+    transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+    background-color: #fff;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin: 10px;
+    padding: 20px;
+    width: 150px;
+    height: 170px;
 }
 
-@-webkit-keyframes spin {
-    0% {
-        -webkit-transform: rotate(0deg);
-        -ms-transform: rotate(0deg);
-        transform: rotate(0deg);
+.card .level {
+    font-family: "Comfortaa", serif;
+    font-size: 18px;
+}
+
+.card:hover { 
+    transform: translateY(-20px);
+    box-shadow: 0 5px 30px 0 rgba(0, 0, 0, 0.5);
+}
+
+.project {
+    height: 500px;
+    justify-content: center;
+    align-items: center;
+    color: #F1F1F1;
+    text-align: center;
+    background-color: black;
+    padding-top: 20px;
+    font-family: "Bebas Neue", serif;
+    font-size: 40px;
+}
+
+.project .row1 {
+    justify-content: center;
+    display: flex;
+}
+
+.row1 a {
+    text-decoration: none;
+}
+
+.project .pcard {
+    box-shadow: 0 1px 2px rgba(0,0,0,0.15);
+    transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+    margin-left: 10px;
+    margin-right: 10px;
+    background-color: #fff;
+    color: black;
+    width: 170px;
+    height: 150px;
+    padding: 30px;
+}
+
+.pcard .pname {
+    font-size: 30px;
+} 
+
+.pcard .pdesc {
+    font-size: 18px;
+    font-family: "Comfortaa", serif;
+}
+
+.project .pcard:hover {
+    transform: translateY(-20px);
+    box-shadow: 0 8px 40px 0 rgba(0, 0, 0, 0.5);
+}
+
+footer {
+    color: #F1F1F1;
+    font-family: 'Julius Sans One', serif;
+    padding-left: 30px;
+}
+
+@media screen and (max-width: 1000px) {
+    /* .top {
+        display: none;
+    } */
+
+    .top {
+        font-size: 50px;
     }
-    100% {
-        -webkit-transform: rotate(360deg);
-        -ms-transform: rotate(360deg);
-        transform: rotate(360deg);
-    }
-}
 
-@keyframes spin {
-    0% {
-        -webkit-transform: rotate(0deg);
-        -ms-transform: rotate(0deg);
-        transform: rotate(0deg);
+    .name {
+        padding-top: 55%;
+    /* height: 400px; */
+    padding-bottom: 60%;
+        font-size: 200px;
+        /* height: 1200px; */
     }
-    100% {
-        -webkit-transform: rotate(360deg);
-        -ms-transform: rotate(360deg);
-        transform: rotate(360deg);
+    .name .intro, .name .info {
+        font-size: 50px;
+    }
+
+    #about {
+        align-items: center;
+        text-align: center;
+        justify-content: center;
+        height: 1900px;
+        font-size: 70px;
+
+    }
+
+    #about .desc {
+        font-size: 40px;
+    }
+
+    #about > .skills {
+        text-align: center;
+        justify-content: center;
+        display: block;
+    }
+
+    .skills > .card {
+        float: left;
+        margin: 20px;
+        height: 350px;
+        width: 400px;
+        font-size: 50px;
+        padding: unset;
+    }
+
+    .skills {
+        margin: 50px;
+    }
+
+    .card .level {
+        font-size: 40px;
+    }
+
+    .card:hover { 
+        transform: translateY(-30px);
+        box-shadow: 0 8px 50px 0 rgba(0, 0, 0, 0.4);
+    }
+
+    .project {
+        padding: unset;
+        height: 1500px;
+        justify-content: center;
+        text-align: center;
+        align-items: center;
+        font-size: 70px;
+    }
+
+    .project .row1 {
+        text-align: center;
+        justify-content: center;
+        font-size: 70px;
+        display: block;
+    }
+
+    .row1 .pcard {
+        background-color: #fff;
+        color: black;
+        float: left;
+        margin: 20px;
+        padding: unset;
+        height: 350px;
+        width: 400px;
+        font-size: 50px;
+    }
+
+    .project > .row1 {
+        margin: 40px;
+    }
+
+    .pcard .pname {
+        font-size: 50px;
+    }
+    .pcard .pdesc {
+        font-size: 40px;
+    }
+    .project .pcard:hover {
+        transform: translateY(-30px);
+        box-shadow: 0 8px 50px 0 rgba(0, 0, 0, 0.4);
+    }
+
+    footer {
+        text-align: center;
+        font-size: 15px;
+        padding-left: 30px;
+        padding-bottom: 5px;
     }
 }
